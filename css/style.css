@@ -1,0 +1,263 @@
+@import url(reset.css);
+
+:root {
+    /* colores */
+    --azul-claro: #666CA3;
+    --azul-oscuro: #13183F;
+    --plomo: #83869A;
+    --rosado-oscuro: #F74780;
+    --rosado-claro: #FFA7C3;
+    --blanco: #FFFFFF;
+    --lg-rosado: linear-gradient(180deg, #FF6F48 0.04%, #F02AA6 100%);
+    --lg-azul: linear-gradient(180deg, #4851FF 0%, #F02AA6 99.92%);
+    --lg-blanco: linear-gradient(180deg, #FFF 0%, #F0F1FF 100%);
+    /* margenes */
+    --padding-inline:1rem;
+    --margin-inline: 1rem;
+    /* alturas  */
+    --alto-header: 75px;
+    --alto-footer: 75px;
+
+}
+
+* {
+  transition: all .6s
+}
+
+body {
+    background: var(--lg-blanco);
+    width: min(1440px, 100%);
+    margin-inline: auto;
+}
+
+
+main {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--padding-inline);
+    height: 75px;
+}
+
+.titulo {
+    color: var(--azul-oscuro);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: normal;
+    list-style: normal;
+}
+
+.titulo--banco {
+    color: var(--blanco);
+}
+
+
+.button {
+    width: 140px;
+    height: 48px;
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.button:is(:hover, :active) {
+    background: var(--azul-claro);
+}
+
+.button.button--pink {
+    background: var(--lg-rosado);
+}
+
+.button.button--purple {
+    background: var(--lg-azul);
+}
+
+.button.button--tranparente {
+    color: var(--rosado-oscuro);
+    background: none;
+    width: 0;
+    text-wrap: nowrap;
+
+}
+
+.button.button--pink:is(:hover, :active) {
+    opacity: 0.6;
+}
+
+.button.button--purple:is(:hover, :active) {
+    opacity: 0.6;
+}
+
+.button.button--tranparente:is(:hover, :active) {
+    opacity: 0.6;
+}
+
+.hero {
+    margin-top: 38px;
+    padding-inline: var(--padding-inline);
+}
+
+.hero__titulo {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    color: var(--azul-oscuro);
+    margin-bottom: 28px;
+}
+
+.hero__content {
+    margin-bottom: 40px;
+}
+
+.hero__imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    & picture {
+      width: min(100%, 468px);
+    }
+
+}
+
+.hero__descripcion {
+    color: var(--plomo);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    margin-bottom: 24px;
+}
+
+.list-card {
+    margin-inline: var(--margin-inline);
+    margin-bottom: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(343px, 1fr));
+    gap: 40px;
+
+}
+
+.card {
+    position: relative;
+    padding-inline: var(--padding-inline);
+    background-color: var(--blanco);
+    box-shadow: 0 25px 50px 0 rgba(6, 22, 141, 0.04);
+    border-radius: 10px;
+    height: 259px;
+}
+
+.card.card--info {
+  background: var(--lg-rosado);
+  height: auto;
+}
+.card.card--info .card__header {
+  padding-block: 24px 24px;
+}
+
+.card.card--info .card__titulo {
+  color: var(--blanco);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 32px;
+}
+
+.card__header {
+    padding-block: 50px 16px;
+}
+
+.card__icon {
+  position: absolute;
+  top:-28px;
+  left: 26px;
+}
+
+.card__titulo {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.card__descripcion {
+    color: var(--plomo);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.card__descripcion {
+    margin-bottom: 24px;
+}
+
+.footer {
+    background-color: var(--azul-oscuro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: var(--padding-inline);
+    height: 75px;
+}
+
+@media (width >= 768px) {
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    max-width: 1440px;
+    margin-bottom: 20px;
+  }
+
+  .hero__imagen {
+    width: 585px;
+    height: 500px;
+  }
+
+  .hero__imagen img {
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    top: -60px;
+    right: -250px;
+  }
+
+}
+
+@media (width >= 1141px) {
+
+  header {
+    overflow: hidden;
+  }
+
+  .hero {
+    overflow: visible;
+
+  }
+
+  .hero__imagen img {
+    width: 700px;
+    height: 500px;
+    top: -60px;
+    right: -250px;
+  }
+}
